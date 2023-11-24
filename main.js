@@ -142,6 +142,7 @@ function handleItemAdd() {
     1) userID
     2) userEmail 
     3) todoItemText*/
+    storeToDoItem(userId, userEmail, todoItemText);
 
     // clear the input value after storing the data
     textInput.value = "";
@@ -151,11 +152,12 @@ function handleItemAdd() {
       Since the user just added a new item we must display it, and so we re-fetch all the items (documents)
       in the user's todo list collection
     */
-
+    textInput.value = "";
     /* STEP 7: Call function fetchAndDisplayAllToDoItems which is located in file 'main.js' and pass in the following 
     parameters:
     1) userID 
     */
+   fetchAndDisplayAllToDoItems(userId);
 }
 
 document.getElementById("new-todo-btn").addEventListener("click", handleItemAdd);
